@@ -1,0 +1,17 @@
+TransactionID:check for duplicates, drop duplicates if prsent as it should be unique
+    #df=data.drop_duplicates
+    #data=data.dropna(subset=['ClientID'])
+Birthyear:check for outlier birth year and drop it, less then 18 and higher then 100
+    #data[data[(data['BirthYear']<2004,(data['BirthYear']<1922
+Birthyear:check for missing Birthyear and take avagere/mean
+    #data['Birthyear'].fillna(data['Birthyear'].mean(),inplace=True)
+    
+Amount; check for outlier: plot  a scatter graph: df.plot.scatter(x='ClientID', y='Amount')
+    #by: data=data[data['Amount']<1000000]
+Profession:replace NaN with not discloses/unknow
+        #data.loc[data['Profession'].isna()==True,data['Profession']]='Not disclosed'
+Profession:replace all letters with lower case value
+    #data.loc[data['Profession']==data['Profession'].strlower()]
+    unify profession names that have the same meaning
+    #data.loc[data['Profession']=='edutient',data['Profession']]='student'
+    #data.loc[data['Profession']=='barman',data['Profession']]='barman'
